@@ -1,0 +1,32 @@
+.main {
+    display:flex;
+    justify-content: center;
+    
+}
+.container {
+    // align-items: center;
+    border-radius: 10px;
+    background-color:white;
+    width: 65vw;
+     &-header {
+        display:flex;
+        flex-direction: row;
+        justify-content:space-between;
+        align-items: center;
+        padding: 0 4vw;
+        &-logo {
+            display:flex;
+            flex-direction: row;
+            img {
+                margin:0 2vw;
+            }
+            .title {
+                font-size: 22px;
+            }
+        }
+     }
+     &-books {
+        background-image: url("../../assets/images/whiteflowers.jpg");
+     }
+
+}

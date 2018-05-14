@@ -1,0 +1,15 @@
+.container {
+    display:flex;
+    justify-content: center;
+    margin-top:200px;
+}
+.title {
+    align-items: center;
+    font-size: 50px;
+    line-height: 1.4em;
+    display: inline-block;
+    border: 2px solid #555;
+    padding: 5px 25px;
+    background: rgba(255, 255, 255, 0.8);
+    margin-bottom:100px;
+}

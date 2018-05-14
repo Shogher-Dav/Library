@@ -1,11 +1,36 @@
-<p>
-  books works!
-</p>
-<button (click)=selectBook()>BOOK</button>
-<button (click)=selectAuthor()>AUTHOR</button>
 
-<div  
- *ngFor="let book of books"
->
- <p>{{book.name}}</p>
+<div class="library"> 
+        <button (click)="openModal()" class="addButton">ADD</button> 
+        <div
+        class="library-books"  
+        *ngFor="let book of books"
+        >
+        <div>
+            <img src="../../assets/images/{{book.img}}" alt="">
+        </div>
+
+        <div class="library-books-data" >
+
+            <div class="library-books-data-item">{{book.title}}</div>
+            <hr>
+            <label for="">Author:</label>
+            <div  class="library-books-data-item">{{book.author}}</div>
+            <label for="">Year:</label>
+            <div  class="library-books-data-item">{{book.year}}</div>
+            <label for="">Pages:</label>
+            <div  class="library-books-data-item">{{book.pages}}</div>
+
+        </div>
+
+        <div>
+        <button (click)="openModal(book.id)">EDIT</button>
+        <button (click)="deleteBook(book)">DELETE</button>
+        </div>
+
+       </div>
+  
 </div>
+
+<app-modal>
+  <app-forms  [currentBook]="currentBook" [check]="check" [books]="books"></app-forms>
+</app-modal>

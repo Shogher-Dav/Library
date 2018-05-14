@@ -1,32 +1,52 @@
 {
-    "books": [
-      {
-        "id": "1", 
-        "title": "Hello", 
-        "name": "World",
-        "authorId":"1"
-      },
-      {
-        "id": "2", 
-        "title": "nemra", 
-        "name": "van",
-        "authorId":"2"
-      }
-    ],
-    "authors":[
-        {
-            "id":"1",
-            "name":"Paulo K."
-
-
-        },
-        {
-            "id":"2",
-            "name":"Paulo K."
-
-
-        }
-    ]
-  
-  }
-
+  "books": [
+    {
+      "id": 1,
+      "title": "American Nerd",
+      "author": "Benjamin Nugent",
+      "year": 2008,
+      "pages": 240,
+      "img": "american-nerd.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Moral Relativism",
+      "author": "Steven Lukes",
+      "year": 2008,
+      "pages": "204",
+      "img": "moral-relativism.jpg"
+    },
+    {
+      "id": 3,
+      "title": "When We Were Romans",
+      "author": "Matthew Kneale",
+      "year": 2007,
+      "pages": 330,
+      "img": "when-were-were-romans.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Curious Case of Benjamin Button",
+      "author": "F. Scott Fitzgerald",
+      "year": 1922,
+      "pages": 512,
+      "img": "curious-case-of-benjamin-button-and-other-jazz-age-stories.jpg"
+    },
+    {
+      "id": 5,
+      "title": "The Collected Poems of Tennessee Williams",
+      "author": " Tennessee Williams",
+      "year": 2007,
+      "pages": 384,
+      "img": "collected-poems-of-tennessee-williams.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Bodies",
+      "author": "Susie Bordach",
+      "year": 2003,
+      "pages": 110,
+      "img": "bodies.jpg"
+    }
+  ]
+}
