@@ -6,7 +6,7 @@
         *ngFor="let book of books"
         >
         <div>
-            <img src="../../assets/images/{{book.img}}" alt="">
+            <img src="../../assets/images/books-covers/{{book.img}}" alt="">
         </div>
 
         <div class="library-books-data" >
@@ -32,5 +32,5 @@
 </div>
 
 <app-modal>
-  <app-forms  [currentBook]="currentBook" [check]="check" [books]="books"></app-forms>
+  <app-forms  [currentBook]="currentBook" [checkForModal]="checkForModal" [books]="books"></app-forms>
 </app-modal>

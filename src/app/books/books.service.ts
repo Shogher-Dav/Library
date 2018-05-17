@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import {HttpClient}   from '@angular/common/http';
 import { BooksComponent } from './books.component';
 import { HttpHeaders } from '@angular/common/http';
-import { Book } from '../book.interface';
+import { Book } from '../book';
 
 
 @Injectable()

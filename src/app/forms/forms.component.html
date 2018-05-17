@@ -1,16 +1,5 @@
 <div class="modal">
     <div class="modal-form">
-        <!-- <label for="male">Title</label>
-        <input type="text"  class="modal-form-input" [(ngModel)]="currentBook.title" ><br>
-        <label for="male">Autor</label>
-        <input type="text"  class="modal-form-input" [(ngModel)]="currentBook.author" ><br>
-        <label for="male">Year</label>
-        <input type="number"   class="modal-form-input" [(ngModel)]="currentBook.year" ><br>
-        <label for="male">Pages</label>
-        <input type="number"  class="modal-form-input"  [(ngModel)]="currentBook.pages" ><br>
-        <input type="file" class="modal-form-input" (change)="changeListener($event)" [(ngModel)]="currentBook.img"/>
-       
-    </div> -->
     <div class="modal-form-labels">
             <label for="male" class="modal-form-item" >Title</label>
             <label for="male" class="modal-form-item">Autor</label>
@@ -18,12 +7,16 @@
             <label for="male" class="modal-form-item">Pages</label>
     </div>
     <div class="modal-form-input">
-            <input type="text"  class="modal-form-item" [(ngModel)]="currentBook.title" ><br>
-            <input type="text"  class="modal-form-item" [(ngModel)]="currentBook.author" ><br>
-            <input type="number"   class="modal-form-item" [(ngModel)]="currentBook.year" ><br>
-            <input type="number"  class="modal-form-item"  [(ngModel)]="currentBook.pages" ><br>
-            <input type="file" class="modal-form-item" (change)="changeListener($event)" [(ngModel)]="currentBook.img"/>
-            <button (click)="addBook()">OK</button>
+            <input type="text"   class="modal-form-item" [(ngModel)]="currentBook.title"
+			><br>
+			<input type="text"    class="modal-form-item" [(ngModel)]="currentBook.author"
+			><br>
+			<input type="number"  class="modal-form-item" [(ngModel)]="currentBook.year" 
+			><br>
+			<input type="pages"  class="modal-form-item"  [(ngModel)]="currentBook.pages"
+		    ><br>
+            <input type="file"    class="modal-form-item" (change)="addImageName($event)"/> 
+            <button (click)="bookRequests()">OK</button>
     </div>
   </div>
 </div>
