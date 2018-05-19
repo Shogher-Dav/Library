@@ -7,53 +7,55 @@ import { FormBuilder, FormControl, FormGroup, Validators, NgForm } from '@angula
 
 
 @Component({
-  selector: 'app-forms',
-  templateUrl: './forms.component.html',
-  styleUrls: ['./forms.component.scss']
+	selector: 'app-forms',
+	templateUrl: './forms.component.html',
+	styleUrls: ['./forms.component.scss']
 })
-export class FormsComponent implements  OnChanges{
+export class FormsComponent implements OnChanges {
+	@Input() public currentBook: Book;
+	@Input() public checkForModal: boolean;
+	@Input() public books: Array<Book>;
+	@Input() public id;
+	@ViewChild('bookForm') form: NgForm;
+	public bookForm: FormGroup;
+	public newBook;
+	ngOnChanges(changes: SimpleChanges): void {
+		this.bookForm = new FormGroup({
+			title: new FormControl("", Validators.required),
+			author: new FormControl("", Validators.required),
+			year: new FormControl("", Validators.required),
+			pages: new FormControl("", Validators.required)
 
-	
-  @Input() public currentBook: Book;
-  @Input() public checkForModal: boolean;
-  @Input() public books: Array<Book>;
-  @Input() public id;
-  @ViewChild('bookForm') form:NgForm;
-  public bookForm: FormGroup;
-ngOnChanges(changes: SimpleChanges): void {
-	this.bookForm=new FormGroup({
-		title:new FormControl("", Validators.required),
-		author:new FormControl("",Validators.required),
-		year:new FormControl("",Validators.required),
-		pages:new FormControl("",Validators.required)
-		
-	})
-}
+		});
 
-  constructor(private booksService: BooksService, 
-			  private modalService: ModalService, ) {}
-			
-  public bookRequests() {
-    if (!this.checkForModal) {
-        this.booksService.add(this.currentBook).subscribe((book) => {
-        	 this.books.push(book);
-      });
-      this.currentBook=new Book();
-      alert("Book is successfully created");
-
-    }
-    else {
-	  this.booksService.edit(this.currentBook.id, this.currentBook).subscribe((crtBook) => {});
-	  alert("Book is successfully edited");
+		this.newBook = Object.assign({}, this.books[this.id - 1]);
 	}
-	
-  }
-  public addImageName(event){
-	this.currentBook.img = event.target.files[0].name;
-  }
-  public canselAction(form){
-//  form.reset();
-  console.log(form);
-  }
-  
+
+	constructor(private booksService: BooksService,
+		private modalService: ModalService, ) { }
+
+	public bookRequests() {
+		if (!this.checkForModal) {
+			this.booksService.add(this.currentBook).subscribe((book) => {
+				this.books.push(book);
+			});
+			this.currentBook = new Book();
+			alert("Book is successfully created");
+
+		}
+		else {
+			this.booksService.edit(this.currentBook.id, this.currentBook).subscribe((crtBook) => { });
+			alert("Book is successfully edited");
+		}
+
+	}
+	public addImageName(event) {
+		this.currentBook.img = event.target.files[0].name;
+	}
+
+	public canselAction() {
+		this.books[this.id - 1] = this.newBook;
+		this.modalService.close();
+	}
+
 }
