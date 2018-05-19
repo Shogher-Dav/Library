@@ -1,23 +1,53 @@
 <div class="modal">
     <div class="modal-form">
-    <div class="modal-form-labels">
-            <label for="male" class="modal-form-item" >Title</label>
+        <div class="modal-form-labels">
+            <label for="male" class="modal-form-item">Title</label>
             <label for="male" class="modal-form-item">Autor</label>
             <label for="male" class="modal-form-item">Year</label>
             <label for="male" class="modal-form-item">Pages</label>
+        </div>
+        <div class="modal-form-input">
+            <form [formGroup]="bookForm">
+                <input type="text" class="modal-form-item"
+                 [(ngModel)]="currentBook.title" name="title" formControlName="title"
+                >
+                <div *ngIf="bookForm.get('title').invalid &&  bookForm.get('title').touched"
+                 class="error"
+                >
+                    Title is required.
+                </div>
+                <br>
+                <input type="text" class="modal-form-item"
+                 [(ngModel)]="currentBook.author" name="author"
+                 formControlName="author"
+                >
+                <br>
+                <div *ngIf="bookForm.get('author').invalid &&  bookForm.get('author').touched"
+                 class="error">
+                    Author is required.
+                </div>
+                <input type="text" class="modal-form-item"
+                 [(ngModel)]="currentBook.year" name="year"
+                 formControlName="year"
+                >
+                <br>
+                <div *ngIf="bookForm.get('year').invalid &&  bookForm.get('year').touched"
+                 class="error">
+                    Year is required.
+                </div>
+                <input type="text" class="modal-form-item"
+                 [(ngModel)]="currentBook.pages" name="pages"
+                  formControlName="pages"
+                >
+                <br>
+                <div *ngIf="bookForm.get('pages').invalid &&  bookForm.get('pages').touched"
+                 class="error">
+                    Pages is required.
+                </div>
+            </form>
+            <button (click)="bookRequests()" [disabled]="!bookForm.valid">OK</button>
+            <button type="submit" (click)="canselAction(bookForm)">Cansel</button>
+        </div>
     </div>
-    <div class="modal-form-input">
-            <input type="text"   class="modal-form-item" [(ngModel)]="currentBook.title"
-			><br>
-			<input type="text"    class="modal-form-item" [(ngModel)]="currentBook.author"
-			><br>
-			<input type="number"  class="modal-form-item" [(ngModel)]="currentBook.year" 
-			><br>
-			<input type="pages"  class="modal-form-item"  [(ngModel)]="currentBook.pages"
-		    ><br>
-            <input type="file"    class="modal-form-item" (change)="addImageName($event)"/> 
-            <button (click)="bookRequests()">OK</button>
-    </div>
-  </div>
-</div>
 
+</div>

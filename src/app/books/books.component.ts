@@ -11,6 +11,7 @@ export class BooksComponent implements OnInit {
   public books: Array<Book> = [];
   public checkForModal: boolean = false;
   public currentBook:Book;
+  public id;
   constructor(private booksService: BooksService, private modalService: ModalService) { }
 
   ngOnInit(): void {
@@ -29,6 +30,7 @@ export class BooksComponent implements OnInit {
       this.currentBook=new Book();
       this.checkForModal = false;
     }
+    this.id=id;
   }
   public deleteBook(book: Book) {
     this.booksService.delete(book).subscribe((data) => {

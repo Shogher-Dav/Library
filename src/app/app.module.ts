@@ -8,7 +8,7 @@ import { BooksService } from './books/books.service';
 import { ModalComponent } from './modal/modal.component';
 import { ModalService } from './modal/modal.service';
 import { FormsComponent } from './forms/forms.component';
-import { FormsModule} from '@angular/forms'
+import { FormsModule, ReactiveFormsModule} from '@angular/forms'
 import { Book } from './book';
 import { BookContainerComponent } from './book-container/book-container.component'
 
@@ -25,6 +25,7 @@ import { BookContainerComponent } from './book-container/book-container.componen
     BrowserModule,
     HttpClientModule,
     FormsModule, 
+    ReactiveFormsModule
   ],
   providers: [
     BooksService,

@@ -4,8 +4,8 @@
       "id": 1,
       "title": "American Nerd",
       "author": "Benjamin Nugent",
-      "year": 2008,
-      "pages": "245",
+      "year": "2009",
+      "pages": "204",
       "img": "american-nerd.jpg"
     },
     {
@@ -47,6 +47,22 @@
       "year": 2003,
       "pages": 110,
       "img": "bodies.jpg"
+    },
+    {
+      "id": 7,
+      "title": "",
+      "author": "",
+      "year": null,
+      "pages": null,
+      "img": ""
+    },
+    {
+      "id": 8,
+      "title": "",
+      "author": "",
+      "year": null,
+      "pages": null,
+      "img": ""
     }
   ]
 }
